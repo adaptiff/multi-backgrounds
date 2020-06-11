@@ -208,6 +208,7 @@ a {
 
 .logo-text span {
   font-weight: normal;
+  font-size: 92%;
 }
 
 .logo-text-slash {
@@ -217,5 +218,4 @@ a {
 .logo-sub-text {
   position: relative;
   top: -1px;
-  font-size: 96%;
 }
