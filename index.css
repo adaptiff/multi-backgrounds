@@ -225,24 +225,92 @@ a {
   padding: 140px 40px;
 }
 
+.sidebar {
+  display: flex;
+}
+
 .slider {
+  position: absolute;
+  left: 218px;
   border-radius: 12px;
   box-shadow: inset 0 4px 26px 0 rgba(10, 31, 68, 0.05);
+  background: #f1f1f480;
   margin: auto auto 30px;
-  width: 690px;
-  height: 90px;
-  padding: 36px;
+  padding: 28px;
   display: flex;
   overflow-x: scroll;
+  display: flex;
+  flex-direction: column;
 }
 
 .slider > * + * {
-  margin-left: 20px;
+  margin-top: 30px;
   flex-shrink: 0;
 }
 
 .back-thumb {
   width: 110px;
   height: 110px;
+  box-shadow: 0 10px 16px 0 rgba(10, 31, 68, 0.15);
+  border-radius: 5px;
   background-size: cover;
+}
+
+.back-packs {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.back-pack-wrapper + .back-pack-wrapper {
+  margin-top: 40px;
+}
+
+.back-pack-wrapper {
+  position: relative;
+}
+
+.back-pack-wrapper .back-pack:nth-child(2) {
+  position: absolute;
+  top: 5px;
+  z-index: -1;
+  left: 5px;
+}
+
+.back-pack-wrapper.active .back-pack:nth-child(2) {
+  display: none;
+}
+
+.back-pack-wrapper.active .back-pack {
+  box-shadow: none;
+  border-color: #f1f1f4;
+  position: relative;
+  left: 12px;
+}
+
+.back-pack-wrapper.active:after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: -7px;
+  width: 165px;
+  height: 166px;
+  border-radius: 12px 0 0 12px;
+  box-shadow: inset 0 4px 26px 0 rgba(10, 31, 68, 0.05);
+  background: #f1f1f480;
+  z-index: -1;
+}
+
+.back-pack {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  background-size: cover;
+  background-color: #fff;
+  border: 5px white solid;
+  box-shadow: 0 10px 16px 0 rgba(10, 31, 68, 0.15);
+  border-radius: 10px;
 }
