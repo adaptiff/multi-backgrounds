@@ -142,8 +142,33 @@ a {
   width: 100%;
   background: #fff;
   padding: 40px;
+  box-sizing: border-box;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.04);
   z-index: 1001;
+  display: flex;
+  justify-content: space-between;
+}
+
+.central-area {
+  display: flex;
+}
+
+.dimensions-times {
+  margin: 0 8px;
+  font-size: 17px;
+  opacity: 0.7;
+}
+
+input[type="text"] {
+  border: 1px solid rgba(34, 36, 38, 0);
+  border-color: rgba(34, 36, 38, 0.07);
+  color: rgba(0, 0, 0, 0.87);
+  text-align: center;
+  padding: 9.5px 14px;
+  box-sizing: border-box;
+  border-radius: 7px;
+  background: #f7f7fa;
+  box-shadow: inset 0 2px 8px 0 rgba(10, 31, 68, 0.05);
 }
 
 .logo {
@@ -227,6 +252,21 @@ a {
 
 .sidebar {
   display: flex;
+  width: 370px;
+  flex-shrink: 0;
+}
+
+.main-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-area img {
+  width: 500px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 6px 20px 0px;
+  border-radius: 5px;
 }
 
 .slider {
@@ -284,23 +324,9 @@ a {
 
 .back-pack-wrapper.active .back-pack {
   box-shadow: none;
-  border-color: #f1f1f4;
   position: relative;
-  left: 12px;
-}
-
-.back-pack-wrapper.active:after {
-  display: block;
-  content: "";
-  position: absolute;
-  top: -18px;
-  left: -7px;
-  width: 165px;
-  height: 166px;
-  border-radius: 12px 0 0 12px;
-  box-shadow: inset 0 4px 26px 0 rgba(10, 31, 68, 0.05);
-  background: #f1f1f480;
-  z-index: -1;
+  border-color: #f7f7fa;
+  opacity: 0.8;
 }
 
 .back-pack {
@@ -313,4 +339,15 @@ a {
   border: 5px white solid;
   box-shadow: 0 10px 16px 0 rgba(10, 31, 68, 0.15);
   border-radius: 10px;
+}
+
+.primary-button {
+  background: black;
+  color: white;
+  border: 0;
+  border-radius: 7px;
+  padding: 0px 22px;
+  height: 36px;
+  line-height: 35px;
+  font-size: 14px;
 }

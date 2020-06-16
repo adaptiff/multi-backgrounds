@@ -11,20 +11,29 @@
   </head>
   <body>
     <header class="header">
-      <a class="logo" href="/"
-        ><div class="logo-symbol">
-          <div class="logo-symbol-block-1"></div>
-          <div class="logo-symbol-block-2"></div>
-        </div>
-        <div class="logo-text">
-          adaptiff
-          <span class="logo-text-slash">/</span>
-          <span class="logo-sub-text">multi-backgrounds</span>
-        </div>
-      </a>
+      <div class="left-side">
+        <a class="logo" href="/"
+          ><div class="logo-symbol">
+            <div class="logo-symbol-block-1"></div>
+            <div class="logo-symbol-block-2"></div>
+          </div>
+          <div class="logo-text">
+            adaptiff
+            <span class="logo-text-slash">/</span>
+            <span class="logo-sub-text">multi-backgrounds</span>
+          </div>
+        </a>
+      </div>
+      <div class="center-area">
+        <input type="text" style="width: 64px;" value="1024" />
+        <span class="dimensions-times">×</span>
+        <input type="text" style="width: 64px;" value="1024" />
+      </div>
+      <div class="right-side">
+        <button class="primary-button">Download</button>
+      </div>
     </header>
     <div class="app-layout">
-      <div class="main-area"></div>
       <div class="sidebar">
         <div class="back-packs">
           <div class="back-pack-wrapper">
@@ -83,6 +92,9 @@
             style="background-image: url('./assets/123.png');"
           ></div>
         </div>
+      </div>
+      <div class="main-area">
+        <img src="./assets/main.png" />
       </div>
     </div>
   </body>
