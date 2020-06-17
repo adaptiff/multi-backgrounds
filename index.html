@@ -11,7 +11,7 @@
   </head>
   <body>
     <header class="header">
-      <div class="left-side">
+      <div class="logo-wrapper">
         <a class="logo" href="/"
           ><div class="logo-symbol">
             <div class="logo-symbol-block-1"></div>
@@ -24,15 +24,13 @@
           </div>
         </a>
       </div>
-      <div class="center-area">
-        <input type="text" style="width: 64px;" value="1024" />
-        <span class="dimensions-times">×</span>
-        <input type="text" style="width: 64px;" value="1024" />
-      </div>
-      <div class="right-side">
-        <button class="primary-button">Download</button>
-      </div>
     </header>
+    <div class="dimensions-area">
+      <input type="text" style="width: 78px;" value="1024" />
+      <span class="dimensions-times">×</span>
+      <input type="text" style="width: 78px;" value="1024" />
+    </div>
+    <button class="primary-button download-button">Download</button>
     <div class="app-layout">
       <div class="sidebar">
         <div class="back-packs">
@@ -109,7 +107,7 @@
         </div>
         <div class="slider">
           <div
-            class="back-thumb"
+            class="back-thumb active"
             style="background-image: url('./assets/117.png');"
           ></div>
           <div
@@ -132,15 +130,12 @@
             class="back-thumb"
             style="background-image: url('./assets/122.png');"
           ></div>
-          <div
-            class="back-thumb"
-            style="background-image: url('./assets/123.png');"
-          ></div>
         </div>
       </div>
-      <div class="main-area">
-        <img src="./assets/main.png" />
-      </div>
+      <div
+        class="the-image"
+        style="background-image: url(./assets/main.png);"
+      ></div>
     </div>
   </body>
 </html>
