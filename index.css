@@ -161,6 +161,14 @@ a {
   position: fixed;
   right: 40px;
   top: 35px;
+  box-shadow: 2px 4px 4px 0 rgba(10, 31, 68, 0.2);
+  display: flex;
+  align-items: center;
+}
+
+.download-button img {
+  width: 17px;
+  margin-right: 8px;
 }
 
 .dimensions-area {
@@ -370,7 +378,7 @@ input[type="text"] {
   color: white;
   border: 0;
   border-radius: 8px;
-  padding: 15px 32px;
+  padding: 15px 28px;
   font-size: 14px;
 }
 
