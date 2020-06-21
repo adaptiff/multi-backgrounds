@@ -193,11 +193,31 @@ a {
   transform: translateX(-50%);
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 
 .dimensions-times {
   margin: 0 12px;
   font-size: 20px;
+}
+
+.dimension-label {
+  width: 120px;
+  display: inline-block;
+}
+
+.dimension {
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+  font-family: "Poppins";
+  font-weight: 600;
+}
+
+.dimension-times {
+  margin: 0 3px;
+  font-weight: normal;
+  font-size: 13px;
 }
 
 .dropdown-arrow-down {
@@ -382,6 +402,8 @@ input[type="text"] {
   position: relative;
   top: 2px;
   transform: scale(0.95);
+  pointer-events: none;
+  cursor: default;
 }
 
 .back-packs {
@@ -407,6 +429,11 @@ input[type="text"] {
 
 .back-pack-wrapper.active .back-pack:nth-child(2) {
   display: none;
+}
+
+.back-pack-wrapper.active {
+  pointer-events: none;
+  cursor: default;
 }
 
 .back-pack-wrapper.active .back-pack {
@@ -479,4 +506,33 @@ input[type="text"] {
 .the-image,
 .slider {
   margin-left: 120px;
+}
+
+.menu-button-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.menu {
+  position: absolute;
+  bottom: -15px;
+  transform: translateY(100%);
+  right: 10px;
+  font-family: sans-serif;
+  background: white;
+  box-shadow: 2px 4px 4px 0 rgba(10, 31, 68, 0.2);
+  padding: 14px 0;
+  border-radius: 8px;
+  font-size: 15px;
+  z-index: 1;
+}
+
+.menu-item {
+  padding: 10px 28px;
+  white-space: nowrap;
+}
+
+.menu-item:hover {
+  background: black;
+  color: white;
 }

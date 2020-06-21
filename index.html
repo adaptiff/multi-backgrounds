@@ -29,10 +29,32 @@
       <input type="text" style="width: 78px;" value="1024" />
       <span class="dimensions-times">×</span>
       <input type="text" style="width: 78px;" value="1024" />
-      <img
-        class="dropdown-arrow-down button"
-        src="./assets/icons/chevron-down.svg"
-      />
+      <div class="menu-button-wrapper">
+        <img
+          class="dropdown-arrow-down button"
+          src="./assets/icons/chevron-down.svg"
+        />
+        <div class="menu">
+          <div class="menu-item">
+            <span class="dimension-label">Sqaure</span>
+            <span class="dimension"
+              >600<span class="dimension-times">×</span>600</span
+            >
+          </div>
+          <div class="menu-item">
+            <span class="dimension-label">Youtube Thumb</span>
+            <span class="dimension"
+              >1280<span class="dimension-times">×</span>720</span
+            >
+          </div>
+          <div class="menu-item">
+            <span class="dimension-label">Facebook Post</span>
+            <span class="dimension"
+              >940<span class="dimension-times">×</span>788</span
+            >
+          </div>
+        </div>
+      </div>
     </div>
     <img
       class="navigation-arrow arrow-right"
@@ -43,7 +65,13 @@
       src="./assets/icons/chevron-left.svg"
     />
     <div class="download-button-wrapper">
-      <img src="./assets/icons/dots-triple.png" class="more-button button" />
+      <div class="menu-button-wrapper">
+        <img src="./assets/icons/dots-triple.png" class="more-button button" />
+        <div class="menu" style="display: none;">
+          <div class="menu-item">License</div>
+          <div class="menu-item">Contact</div>
+        </div>
+      </div>
       <button class="primary-button download-button button">
         <img src="./assets/icons/download.svg" /> Download
       </button>
