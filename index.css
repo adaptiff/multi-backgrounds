@@ -338,18 +338,6 @@ input[type="text"] {
   top: -1px;
 }
 
-.app-layout {
-  display: flex;
-  padding: 40px;
-  padding-left: 130px;
-}
-
-.sidebar {
-  display: flex;
-  width: 370px;
-  flex-shrink: 0;
-}
-
 .the-image {
   position: fixed;
   width: 400px;
@@ -409,6 +397,7 @@ input[type="text"] {
 .back-packs {
   display: flex;
   flex-direction: column;
+  margin-left: 130px;
 }
 
 .back-pack-wrapper + .back-pack-wrapper {
@@ -535,4 +524,46 @@ input[type="text"] {
 .menu-item:hover {
   background: black;
   color: white;
+}
+
+/* MOBILE */
+
+.mobile .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 90px;
+}
+
+.mobile .logo-wrapper {
+  position: static;
+  white-space: nowrap;
+  transform: none;
+  left: 0px;
+  top: 0px;
+}
+
+.mobile .header {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.mobile .back-packs {
+  position: fixed;
+  top: auto;
+  bottom: 40px;
+  width: 100%;
+  flex-direction: row;
+  left: 30px;
+  margin-left: 0;
+}
+
+.mobile .back-pack-wrapper + .back-pack-wrapper {
+  margin-top: 0;
+  margin-left: 30px;
+}
+
+.mobile .slider {
+  display: none;
 }
