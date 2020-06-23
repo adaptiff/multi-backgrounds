@@ -3,6 +3,11 @@ var paddingRightDesktop = 70;
 var paddingBottomDesktop = 220;
 var paddingLeftDesktop = 300;
 
+var paddingTopMobile = 150;
+var paddingRightMobile = 80;
+var paddingBottomMobile = 140;
+var paddingLeftMobile = 80;
+
 var arrowPadding = 20;
 
 var canvasWidth = 1024;
@@ -25,22 +30,33 @@ theImage.style.transform = `scale(${scaleToFullyFit})`;
 var spaceLeftForArrow =
   (window.innerWidth -
     canvasWidth * scaleToFullyFit -
-    paddingRightDesktop -
-    paddingLeftDesktop) /
+    (isMobile
+      ? paddingRightDesktop + paddingLeftDesktop
+      : paddingRightMobile + paddingLeftMobile)) /
   2;
 
 document.getElementById("arrow-left").style.left = `${
-  spaceLeftForArrow / 3 + paddingLeftDesktop - arrowPadding
+  spaceLeftForArrow / 3 +
+  (isMobile ? paddingLeftMobile - 10 : paddingLeftDesktop) -
+  arrowPadding
 }px`;
 document.getElementById("arrow-right").style.right = `${
-  spaceLeftForArrow / 3 + paddingRightDesktop - arrowPadding
+  spaceLeftForArrow / 3 +
+  (isMobile ? paddingRightMobile - 10 : paddingRightDesktop) -
+  arrowPadding
 }px`;
 
 function getScaleToFullyFit() {
   let canvasMaxWidth =
-    window.innerWidth - paddingRightDesktop - paddingLeftDesktop;
+    window.innerWidth -
+    (isMobile
+      ? paddingRightMobile + paddingLeftMobile
+      : paddingRightDesktop + paddingLeftDesktop);
   let canvasMaxHeight =
-    window.innerHeight - paddingTopDesktop - paddingBottomDesktop;
+    window.innerHeight -
+    (isMobile
+      ? paddingTopMobile + paddingBottomMobile
+      : paddingTopDesktop + paddingBottomDesktop);
 
   let scaleToFitWidth = 1;
   let scaleToFitHeight = 1;
