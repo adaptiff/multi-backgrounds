@@ -1,0 +1,51 @@
+<style>
+  body {
+    padding: 100px;
+  }
+  .container {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  .first-row {
+    height: 100%;
+    background: red;
+    flex: 6;
+    display: flex;
+  }
+  .second-row {
+    height: 100%;
+    background: blue;
+    flex: 4;
+  }
+  .first-column {
+    width: 100%;
+    background: brown;
+    display: flex;
+    flex-direction: column;
+  }
+  .second-column {
+    width: 100%;
+    background: coral;
+  }
+  .first-inner-row {
+    background: cornsilk;
+    height: 100%;
+  }
+  .second-inner-row {
+    background: darkolivegreen;
+    height: 100%;
+  }
+</style>
+
+<div class="container">
+  <div class="first-row">
+    <div class="first-column">
+      <div class="first-inner-row"></div>
+      <div class="second-inner-row"></div>
+    </div>
+    <div class="second-column"></div>
+  </div>
+  <div class="second-row"></div>
+</div>
