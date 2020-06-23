@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>adaptiff / multi-backgrounds</title>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="/favicon4.png" />
+    <link rel="shortcut icon" href="./favicon4.png" />
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:400,600&amp;display=swap"
       rel="stylesheet"
     />
     <link href="./index.css" rel="stylesheet" />
+    <meta
+      data-rh="true"
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
   </head>
-  <body class="mobile">
+  <body class="mobileeee">
     <header class="header">
       <div class="logo-wrapper">
         <a class="logo" href="/"
@@ -34,7 +40,7 @@
           class="dropdown-arrow-down button"
           src="./assets/icons/chevron-down.svg"
         />
-        <div class="menu">
+        <div class="menu" style="display: none;">
           <div class="menu-item">
             <span class="dimension-label">Sqaure</span>
             <span class="dimension"
@@ -57,10 +63,12 @@
       </div>
     </div>
     <img
+      id="arrow-right"
       class="navigation-arrow arrow-right"
       src="./assets/icons/chevron-right.svg"
     />
     <img
+      id="arrow-left"
       class="navigation-arrow arrow-left"
       src="./assets/icons/chevron-left.svg"
     />
@@ -160,9 +168,13 @@
         style="background-image: url('./assets/122.png');"
       ></div>
     </div>
-    <div
-      class="the-image"
-      style="background-image: url(./assets/main.png);"
-    ></div>
+    <div class="the-image-container">
+      <div
+        id="the-image"
+        class="the-image"
+        style="background-image: url(./assets/main.png);"
+      ></div>
+    </div>
+    <script src="./index.js"></script>
   </body>
 </html>

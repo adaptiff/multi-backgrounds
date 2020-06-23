@@ -233,7 +233,7 @@ a {
 .navigation-arrow {
   position: fixed;
   top: 50%;
-  margin-top: -30px;
+  margin-top: -40px;
   transform: translateY(-50%);
   width: 45px;
   cursor: pointer;
@@ -338,16 +338,25 @@ input[type="text"] {
   top: -1px;
 }
 
+.the-image-container {
+  position: fixed;
+  pointer-events: none;
+  top: 140px;
+  right: 70px;
+  bottom: 220px;
+  left: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .the-image {
   position: fixed;
-  width: 400px;
-  height: 400px;
+  width: 0px;
+  height: 0px;
   box-shadow: 6px 40px 46px 0 rgba(10, 31, 68, 0.15);
   background-size: cover;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: -40px;
+  pointer-events: all;
 }
 
 .slider {
@@ -355,7 +364,7 @@ input[type="text"] {
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  margin-left: 50px;
+  margin-left: 170px;
   padding: 10px;
   display: flex;
   overflow-x: scroll;
@@ -398,6 +407,8 @@ input[type="text"] {
   display: flex;
   flex-direction: column;
   margin-left: 130px;
+  margin-top: 30px;
+  width: 150px;
 }
 
 .back-pack-wrapper + .back-pack-wrapper {
@@ -492,7 +503,6 @@ input[type="text"] {
 }
 
 .dimensions-area,
-.the-image,
 .slider {
   margin-left: 120px;
 }
@@ -546,24 +556,73 @@ input[type="text"] {
 .mobile .header {
   display: flex;
   align-items: center;
-  padding: 0 30px;
+  padding: 0 25px;
 }
 
 .mobile .back-packs {
   position: fixed;
   top: auto;
-  bottom: 40px;
+  bottom: 16px;
   width: 100%;
   flex-direction: row;
-  left: 30px;
+  left: 0px;
   margin-left: 0;
+  overflow: auto;
+  padding: 25px;
 }
 
 .mobile .back-pack-wrapper + .back-pack-wrapper {
   margin-top: 0;
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 .mobile .slider {
   display: none;
+}
+
+.mobile .dimensions-area {
+  left: 50%;
+  top: 138px;
+  transform: translateX(-50%) scale(1.4);
+  margin-left: 97px;
+}
+
+.mobile .dimensions-times,
+.mobile .dimensions-area input {
+  display: none;
+}
+
+.mobile .back-pack {
+  width: 80px;
+  height: 80px;
+}
+
+.mobile .the-image {
+  margin-left: 0px;
+  width: 150px;
+  height: 150px;
+  margin-top: 10px;
+}
+
+.mobile .download-button-wrapper {
+  top: 130px;
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mobile .more-button {
+  display: none;
+}
+
+.mobile .arrow-right {
+  right: -10px;
+  margin-top: 0;
+  transition: none;
+}
+
+.mobile .arrow-left {
+  left: -10px;
+  margin-top: 0;
+  transition: none;
 }
