@@ -92,7 +92,7 @@ function updateImageSizeAndArrows() {
 
   theDownloadedImage.style.width = `${canvasWidth}px`;
   theDownloadedImage.style.height = `${canvasHeight}px`;
-  theDownloadedImage.classList.remove(["bigger-width", "bigger-height"]);
+  theDownloadedImage.classList.remove("bigger-width", "bigger-height");
   theDownloadedImage.classList.add(
     canvasWidth > canvasHeight ? "bigger-width" : "bigger-height"
   );
