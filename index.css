@@ -363,6 +363,7 @@ input[type="text"] {
   height: 0px;
   box-shadow: 6px 40px 46px 0 rgba(10, 31, 68, 0.15);
   background-size: cover;
+  background-position: center;
   pointer-events: all;
 }
 
