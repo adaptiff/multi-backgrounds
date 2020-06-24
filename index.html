@@ -32,28 +32,28 @@
       </div>
     </header>
     <div class="dimensions-area">
-      <input type="text" style="width: 78px;" value="1024" />
+      <input id="width-input" type="text" style="width: 78px;" value="1024" />
       <span class="dimensions-times">×</span>
-      <input type="text" style="width: 78px;" value="1024" />
+      <input id="height-input" type="text" style="width: 78px;" value="1024" />
       <div class="menu-button-wrapper">
         <img
-          class="dropdown-arrow-down button"
+          class="dropdown-arrow-down button menu-trigger"
           src="./assets/icons/chevron-down.svg"
         />
-        <div class="menu" style="display: none;">
-          <div class="menu-item">
+        <div id="dimensions-menu" class="menu" style="display: none;">
+          <div class="menu-item" data-width="600" data-height="600">
             <span class="dimension-label">Sqaure</span>
             <span class="dimension"
               >600<span class="dimension-times">×</span>600</span
             >
           </div>
-          <div class="menu-item">
+          <div class="menu-item" data-width="1280" data-height="720">
             <span class="dimension-label">Youtube Thumb</span>
             <span class="dimension"
               >1280<span class="dimension-times">×</span>720</span
             >
           </div>
-          <div class="menu-item">
+          <div class="menu-item" data-width="940" data-height="788">
             <span class="dimension-label">Facebook Post</span>
             <span class="dimension"
               >940<span class="dimension-times">×</span>788</span
@@ -74,13 +74,24 @@
     />
     <div class="download-button-wrapper">
       <div class="menu-button-wrapper">
-        <img src="./assets/icons/dots-triple.png" class="more-button button" />
+        <img
+          src="./assets/icons/dots-triple.png"
+          class="more-button button menu-trigger"
+        />
         <div class="menu" style="display: none;">
-          <div class="menu-item">License</div>
-          <div class="menu-item">Contact</div>
+          <div id="license-button" class="menu-item">License</div>
+          <a
+            class="menu-item"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSddoo8_28sRF5Pt7AZae5wtTXPH18dNYFoD8kujnf7omcKaDQ/viewform"
+            target="_blank"
+            >Contact</a
+          >
         </div>
       </div>
-      <button class="primary-button download-button button">
+      <button
+        id="download-button"
+        class="primary-button download-button button"
+      >
         <img src="./assets/icons/download.svg" /> Download
       </button>
     </div>
@@ -175,6 +186,20 @@
         style="background-image: url(./assets/main.png);"
       ></div>
     </div>
+    <div id="modal" class="modal-overlay" style="display: none;">
+      <div class="modal">
+        <img class="modal-x" src="./assets/icons/x.svg" />
+        <div class="alert">
+          <div class="modal-title">License</div>
+          <div class="modal-description">
+            All images generated on this site can be used for free.
+            <br />
+            You can use them for commercial and noncommercial purposes.
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./index.js"></script>
+    <script src="https://unpkg.com/html2canvas@1.0.0-alpha.12/dist/html2canvas.min.js"></script>
   </body>
 </html>
