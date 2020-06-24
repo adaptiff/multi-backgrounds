@@ -369,6 +369,18 @@ input[type="text"] {
 #the-downloaded-image {
   position: absolute;
   top: -10000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#the-downloaded-image.bigger-width img {
+  width: 100%;
+}
+
+#the-downloaded-image.bigger-height img {
+  height: 100%;
 }
 
 .slider {
@@ -469,6 +481,11 @@ input[type="text"] {
   border-radius: 10px;
   transition: all 300ms ease;
   cursor: pointer;
+  overflow: hidden;
+}
+
+.back-pack img {
+  width: 100%;
 }
 
 .back-pack-wrapper:hover .back-pack:nth-child(1) {
