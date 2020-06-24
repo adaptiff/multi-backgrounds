@@ -17,10 +17,10 @@ var isMobile = window.innerWidth < 960;
 
 if (isMobile) {
   document.body.classList.add("mobile");
-} else {
 }
 
 var theImage = document.getElementById("the-image");
+var theDownloadedImage = document.getElementById("the-downloaded-image");
 
 var widthInput = document.getElementById("width-input");
 var heightInput = document.getElementById("height-input");
@@ -61,9 +61,9 @@ document.querySelectorAll(".menu-trigger").forEach((elem) => {
 });
 
 document.getElementById("dimensions-menu").addEventListener("click", (e) => {
-  canvasWidth = parseInt(e.target.parentElement.dataset.width);
+  canvasWidth = parseInt(e.target.dataset.width);
   widthInput.value = canvasWidth;
-  canvasHeight = parseInt(e.target.parentElement.dataset.height);
+  canvasHeight = parseInt(e.target.dataset.height);
   heightInput.value = canvasHeight;
   updateImageSizeAndArrows();
 });
@@ -77,7 +77,7 @@ document.getElementById("modal").addEventListener("click", () => {
 });
 
 document.getElementById("download-button").addEventListener("click", () => {
-  html2canvas(document.getElementById("the-image")).then((canvas) => {
+  html2canvas(theDownloadedImage).then((canvas) => {
     var imageDataURL = canvas.toDataURL("image/png");
     downloadFromDataURL("download.png", imageDataURL);
   });
@@ -89,6 +89,9 @@ function updateImageSizeAndArrows() {
   theImage.style.width = `${canvasWidth}px`;
   theImage.style.height = `${canvasHeight}px`;
   theImage.style.transform = `scale(${scaleToFullyFit})`;
+
+  theDownloadedImage.style.width = `${canvasWidth}px`;
+  theDownloadedImage.style.height = `${canvasHeight}px`;
 
   var spaceLeftForArrow =
     (window.innerWidth -
