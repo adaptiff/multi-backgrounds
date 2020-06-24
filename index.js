@@ -164,7 +164,7 @@ function downloadFromDataURL(filename, dataUrl) {
 }
 
 // from Abhinav's answer at  https://stackoverflow.com/questions/37135417/download-canvas-as-png-in-fabric-js-giving-network-error/
-export const dataURLtoBlob = function (dataurl) {
+function dataURLtoBlob(dataurl) {
   var parts = dataurl.split(","),
     mime = parts[0].match(/:(.*?);/)[1];
   if (parts[0].indexOf("base64") !== -1) {
@@ -180,4 +180,4 @@ export const dataURLtoBlob = function (dataurl) {
     var raw = decodeURIComponent(parts[1]);
     return new Blob([raw], { type: mime });
   }
-};
+}
