@@ -119,93 +119,12 @@
         <img src="./assets/icons/download.svg" /> Download
       </button>
     </div>
-    <div class="back-packs">
-      <div class="back-pack-wrapper active">
-        <div class="back-pack">
-          <img src="./assets/123.png" loading="lazy" />
-        </div>
-        <div class="back-pack"></div>
-      </div>
-      <div class="back-pack-wrapper">
-        <div class="back-pack">
-          <img src="https://adaptiff.com/thumbs/125.png" loading="lazy" />
-        </div>
-        <div class="back-pack"></div>
-      </div>
-      <div class="back-pack-wrapper">
-        <div class="back-pack">
-          <img src="https://adaptiff.com/thumbs/131.png" loading="lazy" />
-        </div>
-        <div class="back-pack"></div>
-      </div>
-      <div class="back-pack-wrapper">
-        <div
-          class="back-pack"
-          style="background-image: url('https://adaptiff.com/thumbs/109.png');"
-        ></div>
-        <div class="back-pack"></div>
-      </div>
-      <div class="back-pack-wrapper">
-        <div
-          class="back-pack"
-          style="background-image: url('https://adaptiff.com/thumbs/138.png');"
-        ></div>
-        <div class="back-pack"></div>
-      </div>
-      <div class="back-pack-wrapper">
-        <div
-          class="back-pack"
-          style="background-image: url('https://adaptiff.com/thumbs/b27.png');"
-        ></div>
-        <div class="back-pack"></div>
-      </div>
-      <div class="back-pack-wrapper">
-        <div
-          class="back-pack"
-          style="background-image: url('https://adaptiff.com/thumbs/n43.png');"
-        ></div>
-        <div class="back-pack"></div>
-      </div>
-      <div class="back-pack-wrapper">
-        <div
-          class="back-pack"
-          style="background-image: url('https://adaptiff.com/thumbs/98.png');"
-        ></div>
-        <div class="back-pack"></div>
-      </div>
-    </div>
-    <div class="slider">
-      <div
-        class="back-thumb active"
-        style="background-image: url('./assets/117.png');"
-      ></div>
-      <div
-        class="back-thumb button"
-        style="background-image: url('./assets/118.png');"
-      ></div>
-      <div
-        class="back-thumb button"
-        style="background-image: url('./assets/119.png');"
-      ></div>
-      <div
-        class="back-thumb button"
-        style="background-image: url('./assets/120.png');"
-      ></div>
-      <div
-        class="back-thumb button"
-        style="background-image: url('./assets/121.png');"
-      ></div>
-      <div
-        class="back-thumb button"
-        style="background-image: url('./assets/122.png');"
-      ></div>
-    </div>
+    <div id="back-packs" class="back-packs"></div>
+    <div id="backs" class="slider"></div>
     <div class="the-image-container">
-      <div
-        id="the-image"
-        class="the-image"
-        style="background-image: url(./assets/main.png);"
-      ></div>
+      <div id="the-image" class="the-image">
+        <div id="the-image-hd"></div>
+      </div>
       <div id="the-downloaded-image">
         <img src="./assets/main.png" />
       </div>
@@ -223,6 +142,7 @@
         </div>
       </div>
     </div>
+    <script src="./sources.js"></script>
     <script src="./index.js"></script>
     <script src="https://unpkg.com/html2canvas@1.0.0-alpha.12/dist/html2canvas.min.js"></script>
   </body>

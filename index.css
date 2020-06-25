@@ -253,11 +253,11 @@ body {
 }
 
 .arrow-right {
-  right: 100px;
+  right: 50px;
 }
 
 .arrow-left {
-  left: 370px;
+  left: 300px;
 }
 
 input[type="text"] {
@@ -349,9 +349,9 @@ input[type="text"] {
   position: fixed;
   pointer-events: none;
   top: 140px;
-  right: 70px;
+  right: 120px;
   bottom: 220px;
-  left: 300px;
+  left: 370px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -365,6 +365,16 @@ input[type="text"] {
   background-size: cover;
   background-position: center;
   pointer-events: all;
+}
+
+#the-image-hd {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  background-position: center;
 }
 
 #the-downloaded-image {
@@ -422,7 +432,7 @@ input[type="text"] {
   box-shadow: none;
   opacity: 0.7;
   position: relative;
-  top: 2px;
+  top: 0px;
   transform: scale(0.95);
   pointer-events: none;
   cursor: default;
@@ -442,6 +452,7 @@ input[type="text"] {
 
 .back-pack-wrapper {
   position: relative;
+  cursor: pointer;
 }
 
 .back-pack-wrapper .back-pack:nth-child(2) {
@@ -483,6 +494,7 @@ input[type="text"] {
   transition: all 300ms ease;
   cursor: pointer;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .back-pack img {
@@ -532,7 +544,9 @@ input[type="text"] {
   font-size: 14px;
 }
 
-.dimensions-area,
+.dimensions-area {
+  margin-left: 151px;
+}
 .slider {
   margin-left: 120px;
 }
@@ -700,13 +714,13 @@ input[type="text"] {
 }
 
 .mobile .arrow-right {
-  right: -10px;
+  right: 10px;
   margin-top: 15px;
   transition: none;
 }
 
 .mobile .arrow-left {
-  left: -10px;
+  left: 10px;
   margin-top: 15px;
   transition: none;
 }

@@ -1,7 +1,10 @@
+var selectedBackpack = 0;
+var selectedBack = 0;
+
 var paddingTopDesktop = 140;
-var paddingRightDesktop = 70;
+var paddingRightDesktop = 120;
 var paddingBottomDesktop = 220;
-var paddingLeftDesktop = 300;
+var paddingLeftDesktop = 370;
 
 var paddingTopMobile = 150;
 var paddingRightMobile = 80;
@@ -20,6 +23,7 @@ if (isMobile) {
 }
 
 var theImage = document.getElementById("the-image");
+var theImageHD = document.getElementById("the-image-hd");
 var theDownloadedImage = document.getElementById("the-downloaded-image");
 
 var widthInput = document.getElementById("width-input");
@@ -27,11 +31,11 @@ var heightInput = document.getElementById("height-input");
 
 widthInput.addEventListener("blur", (e) => {
   canvasWidth = e.target.value;
-  updateImageSizeAndArrows();
+  updateImageSize();
 });
 heightInput.addEventListener("blur", (e) => {
   canvasHeight = e.target.value;
-  updateImageSizeAndArrows();
+  updateImageSize();
 });
 var onEnterKey = (e) => {
   if (e.keyCode === 13) {
@@ -41,7 +45,11 @@ var onEnterKey = (e) => {
 widthInput.addEventListener("keypress", onEnterKey);
 heightInput.addEventListener("keypress", onEnterKey);
 
-updateImageSizeAndArrows();
+updateImageSize();
+
+renderBackPackList();
+renderBackList();
+updateActiveItems();
 
 document.querySelectorAll(".menu-trigger").forEach((elem) => {
   elem.addEventListener("click", (e) => {
@@ -49,9 +57,6 @@ document.querySelectorAll(".menu-trigger").forEach((elem) => {
     menu.style.display = "block";
     setTimeout(() => {
       var hideMenu = (e) => {
-        // if (menu.contains(e.target) || menu === e.target) {
-        //     return;
-        // }
         menu.style.display = "none";
         document.removeEventListener("click", hideMenu);
       };
@@ -65,7 +70,7 @@ document.getElementById("dimensions-menu").addEventListener("click", (e) => {
   widthInput.value = canvasWidth;
   canvasHeight = parseInt(e.target.dataset.height);
   heightInput.value = canvasHeight;
-  updateImageSizeAndArrows();
+  updateImageSize();
 });
 
 document.getElementById("license-button").addEventListener("click", () => {
@@ -83,7 +88,101 @@ document.getElementById("download-button").addEventListener("click", () => {
   });
 });
 
-function updateImageSizeAndArrows() {
+document.getElementById("back-packs").addEventListener("click", (e) => {
+  if (!e.target.classList.contains("back-pack-wrapper")) {
+    return;
+  }
+  selectedBackpack = Array.prototype.indexOf.call(
+    e.target.parentElement.children,
+    e.target
+  );
+  selectedBack = 0;
+  renderBackList();
+  updateActiveItems();
+});
+
+document.getElementById("backs").addEventListener("click", (e) => {
+  if (!e.target.classList.contains("back-thumb")) {
+    return;
+  }
+  selectedBack = Array.prototype.indexOf.call(
+    e.target.parentElement.children,
+    e.target
+  );
+  updateActiveItems();
+});
+
+document.getElementById("arrow-right").addEventListener("click", (e) => {
+  selectedBack++;
+  if (selectedBack > window.sources[selectedBackpack].files.length - 1) {
+    selectedBack = 0;
+  }
+  updateActiveItems();
+});
+
+document.getElementById("arrow-left").addEventListener("click", (e) => {
+  selectedBack--;
+  if (selectedBack < 0) {
+    selectedBack = window.sources[selectedBackpack].files.length - 1;
+  }
+  updateActiveItems();
+});
+
+function renderBackPackList() {
+  var backpackList = "";
+  window.sources.forEach((source) => {
+    backpackList += `
+<div class="back-pack-wrapper">
+<div class="back-pack">
+  <img src="${source.thumb}" loading="lazy" />
+</div>
+<div class="back-pack"></div>
+</div>`;
+  });
+  document.getElementById("back-packs").innerHTML = backpackList;
+}
+
+function renderBackList() {
+  var backList = "";
+  window.sources[selectedBackpack].files.forEach((file) => {
+    backList += `
+    <div
+    class="back-thumb button"
+    style="background-image: url('${file}.jpg');"></div>
+  `;
+  });
+  document.getElementById("backs").innerHTML = backList;
+}
+
+function renderTheImage() {
+  const file = window.sources[selectedBackpack].files[selectedBack];
+
+  theImage.style.backgroundImage = `url(${file}.jpg)`;
+  theImageHD.style.backgroundImage = `url(${file}.png)`;
+  theDownloadedImage.style.backgroundImage = `url(${file}.png)`;
+}
+
+function updateActiveItems() {
+  const activeBackpack = document.querySelector(".back-pack-wrapper.active");
+  if (activeBackpack) {
+    activeBackpack.classList.remove("active");
+  }
+  document
+    .querySelectorAll(".back-pack-wrapper")
+    [selectedBackpack].classList.add("active");
+
+  const activeBack = document.querySelector(".back-thumb.active");
+  if (activeBack) {
+    activeBack.classList.remove("active");
+  }
+  document
+    .querySelectorAll(".back-thumb")
+    [selectedBack].classList.add("active");
+
+  renderTheImage();
+}
+
+function updateImageSize() {
   var scaleToFullyFit = getScaleToFullyFit();
 
   theImage.style.width = `${canvasWidth}px`;
@@ -96,25 +195,6 @@ function updateImageSizeAndArrows() {
   theDownloadedImage.classList.add(
     canvasWidth > canvasHeight ? "bigger-width" : "bigger-height"
   );
-
-  var spaceLeftForArrow =
-    (window.innerWidth -
-      canvasWidth * scaleToFullyFit -
-      (isMobile
-        ? paddingRightDesktop + paddingLeftDesktop
-        : paddingRightMobile + paddingLeftMobile)) /
-    2;
-
-  document.getElementById("arrow-left").style.left = `${
-    spaceLeftForArrow / 3 +
-    (isMobile ? paddingLeftMobile - 10 : paddingLeftDesktop) -
-    arrowPadding
-  }px`;
-  document.getElementById("arrow-right").style.right = `${
-    spaceLeftForArrow / 3 +
-    (isMobile ? paddingRightMobile - 10 : paddingRightDesktop) -
-    arrowPadding
-  }px`;
 }
 
 function getScaleToFullyFit() {
